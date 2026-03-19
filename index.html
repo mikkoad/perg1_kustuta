@@ -1,29 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PERG 3</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+
+        window.onload = function() {
+            let algne = document.getElementById("clicks");
+            algne.innerHTML = localStorage.getItem("test");
+        }
+
+        function kaunter(){
+            let algne = document.getElementById("clicks");
+            let tulemus = Number(algne.innerHTML) + 1;
+            algne.innerHTML = tulemus;
+
+            localStorage.setItem("test", tulemus);
+        }
+    </script>
 </head>
+
 <body>
-
-    <div class="nav">
-        <a href="index.html">Avaleht</a>
-        <a href="kontakt.html">Kontakt</a>
-    </div>
     
-    <h1>Mikk Oad portfolio</h1>
-
-    <h1>teine pealkiri</h1>
-
-    <h2>kolmas pealkiri</h2>
-    <p>Mikk Oad õpetab PERGis programmeerimist ja veebiarendust.</p>
-    <a href="https://perg.ee">parim kool evaah.</a><br>
-
-    <img style="max-width: 200px;" src="potatho.webp" alt="pildil on kartul.">
-
-
+    <h1>Kartuli klikker</h1>
     
+    <h2>Klikke kokku: <span id="clicks">0</span></h2>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJR-TNVErsChtfvJbeb6Q7fuzP1TS1WibcECCtTKupk6KLD5Tk3wmXDPcR86FC4IjK9iCe-NhCtWflOVKEzNmRtzVDAdqoJ35w_x5WwA&s=10" alt="kartul" onclick="kaunter()">
+
 </body>
 </html>
